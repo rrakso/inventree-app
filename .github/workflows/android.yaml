@@ -38,3 +38,9 @@ jobs:
         flutter pub get
         cp lib/dummy_dsn.dart lib/dsn.dart
         flutter build apk --debug
+    - name: 'Upload Artifact'
+      uses: actions/upload-artifact@v3
+      with:
+        name: app-debug.apk
+        path: build/app/outputs/flutter-apk/app-debug.apk
+        retention-days: 5
